@@ -1,13 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
-import { Directive } from './features/components/directive/directive';
+import { Layout } from './layout/layout';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    CommonModule,
-    Directive
-  ],
+  imports: [CommonModule, Layout],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
