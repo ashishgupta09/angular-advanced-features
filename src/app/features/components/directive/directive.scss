@@ -1,0 +1,151 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f1f5f9;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+}
+
+h1 {
+  margin-bottom: 15px;
+  color: #1e293b;
+}
+
+p {
+  margin-bottom: 25px;
+  color: #64748b;
+}
+
+button {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+
+p {
+  margin-bottom: 25px;
+  color: #64748b;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  outline: none;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.preview {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8fafc;
+  border-radius: 12px;
+  color: #334155;
+}
+
+.result {
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #334155;
+}
+
+.skeleton-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skeleton-box {
+  width: 100%;
+  border-radius: 12px;
+  animation: pulse 1.5s infinite;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.user-card {
+  padding: 20px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.user-card h3 {
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.user-card p {
+  margin: 0;
+  color: #64748b;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
