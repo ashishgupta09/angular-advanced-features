@@ -76,3 +76,26 @@
     }
   </div>
 </div>
+
+<div class="container">
+  <h1>Tooltip Directive</h1>
+  <button class="btn" [appTooltip]="'Save Data'">Hover Me</button>
+</div>
+
+<div class="container">
+  <h1>Role Based Directive</h1>
+  <div *appRole="'admin'" class="card admin">Admin Panel Visible</div>
+  <div *appRole="'user'" class="card user">User Panel Visible</div>
+</div>
+
+<div class="container" appInfiniteScroll (scrolled)="onScrollDown()">
+  <h1>Infinite Scroll Directive</h1>
+
+  <div class="grid">
+    @for (item of items; track item) {
+      <div class="card">
+        {{ item }}
+      </div>
+    }
+  </div>
+</div>

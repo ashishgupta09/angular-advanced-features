@@ -10,7 +10,6 @@ export class MemoizationPipe implements PipeTransform {
   transform(value: number): number {
     if (this.cache.has(value)) {
       console.log('FROM CACHE');
-
       return this.cache.get(value)!;
     }
 

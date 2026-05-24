@@ -20,7 +20,7 @@ export class Role {
 
   @Input()
   set appRole(role: string) {
-    const userRole = 'admin';
+    const userRole = 'user';
     if (role === userRole) {
       this.viewContainer.createEmbeddedView(this.templateRef);
     } else {

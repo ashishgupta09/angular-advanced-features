@@ -39,7 +39,7 @@ interface User {
 export class Pipes {
   search = '';
   currentPage = 1;
-  itemsPerPage = 2;
+  itemsPerPage = 3;
 
   users: User[] = [
     {
@@ -84,9 +84,9 @@ export class Pipes {
   ];
 
   htmlContent = `
-    <h2 style="color:#2563eb">
+    <p style="color:#2563eb">
       Angular Safe HTML Content
-    </h2>
+    </p>
   `;
 
   createdAt = new Date(Date.now() - 7200000);
