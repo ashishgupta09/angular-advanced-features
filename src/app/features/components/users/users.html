@@ -1,0 +1,140 @@
+<div class="page">
+  <!-- HEADER -->
+
+  <div class="header">
+    <div>
+      <h1>User Management</h1>
+      <p>Angular Zoneless Signals CRUD Operations</p>
+    </div>
+
+    <div class="stats-card">
+      <h2>{{ users().length }}</h2>
+      <span>Total Users</span>
+    </div>
+  </div>
+
+  <!-- FORM -->
+
+  <div class="form-card">
+    <div class="card-title">
+      <h2>
+        {{ isEditMode() ? 'Update User' : 'Create User' }}
+      </h2>
+    </div>
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="form-grid">
+        <div class="form-group">
+          <label> First Name </label>
+
+          <input type="text" formControlName="firstName" placeholder="Enter first name" />
+        </div>
+
+        <div class="form-group">
+          <label> Last Name </label>
+
+          <input type="text" formControlName="lastName" placeholder="Enter last name" />
+        </div>
+
+        <div class="form-group">
+          <label> Email </label>
+
+          <input type="email" formControlName="email" placeholder="Enter email" />
+        </div>
+
+        <div class="form-group">
+          <label> Phone </label>
+
+          <input type="text" formControlName="phone" placeholder="Enter phone" />
+        </div>
+
+        <div class="form-group">
+          <label> Age </label>
+
+          <input type="number" formControlName="age" placeholder="Enter age" />
+        </div>
+
+        <div class="form-group">
+          <label> Role </label>
+
+          <input type="text" formControlName="role" placeholder="Enter role" />
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button class="primary-btn" type="submit">
+          {{ isEditMode() ? 'Update User' : 'Add User' }}
+        </button>
+
+        <button type="button" class="secondary-btn" (click)="resetForm()">Reset</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- TABLE -->
+
+  <div class="table-card">
+    <div class="card-title">
+      <h2>Users List</h2>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Avatar</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @for (user of users(); track user.id) {
+            <tr>
+              <td>
+                <img [src]="user.image" class="avatar" />
+              </td>
+
+              <td>
+                <div class="user-info">
+                  <strong>
+                    {{ user.firstName }}
+                    {{ user.lastName }}
+                  </strong>
+
+                  <span>
+                    {{ user.gender }}
+                  </span>
+                </div>
+              </td>
+
+              <td>
+                {{ user.email }}
+              </td>
+
+              <td>
+                {{ user.phone }}
+              </td>
+
+              <td>
+                <span class="role-badge">
+                  {{ user.role }}
+                </span>
+              </td>
+
+              <td>
+                <div class="action-buttons">
+                  <button class="edit-btn" (click)="editUser(user)">Edit</button>
+                  <button class="delete-btn" (click)="deleteUser(user.id)">Delete</button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

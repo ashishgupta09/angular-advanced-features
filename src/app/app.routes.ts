@@ -1,6 +1,11 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'users' },
+  {
+    path: 'users',
+    loadComponent: () => import('../app/features/components/users/users').then((c) => c.Users),
+  },
   {
     path: 'directive',
     loadComponent: () =>

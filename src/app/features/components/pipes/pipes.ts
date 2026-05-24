@@ -20,6 +20,7 @@ interface User {
 
 @Component({
   selector: 'app-pipes',
+  standalone: true,
   imports: [
     CommonModule,
     FormsModule,
