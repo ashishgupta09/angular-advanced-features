@@ -15,4 +15,8 @@ export const routes: Routes = [
     path: 'pipe',
     loadComponent: () => import('../app/features/components/pipes/pipes').then((c) => c.Pipes),
   },
+  {
+    path: 'reusable',
+    loadComponent: () => import('../app/features/components/resuable/resuable').then((c) => c.Resuable),
+  },
 ];

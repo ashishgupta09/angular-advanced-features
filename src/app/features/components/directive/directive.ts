@@ -80,4 +80,5 @@ export class Directive implements OnInit {
     console.log('Loading More Data...');
     this.loadData();
   }
+
 }

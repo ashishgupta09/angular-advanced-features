@@ -1,0 +1,50 @@
+<!-- modal -->
+
+<button (click)="openModel()" style="max-width: 200px; margin: 20px auto; display: block">
+  Open Modal
+</button>
+
+@if (isOpen) {
+  <app-modal
+    [title]="'Directive header'"
+    [body]="'this is the Directive modal body'"
+    (close)="close()"
+  >
+  </app-modal>
+}
+
+<!-- button -->
+
+<div class="container">
+  <app-button label="Save" variant="primary"></app-button>
+  <app-button label="Delete" variant="danger"></app-button>
+</div>
+
+<!-- input -->
+
+<div class="input-container">
+  <app-input-field
+    label="Email"
+    placeholder="Enter Email"
+    [control]="emailControl"
+  ></app-input-field>
+</div>
+
+<!-- card -->
+
+<div class="dashboard-container">
+  <app-card>
+    <h2>Dashboard</h2>
+    <p>Revenue Details</p>
+  </app-card>
+
+  <app-card>
+    <h2>Dashboard 2</h2>
+    <p>Revenue Details 1</p>
+  </app-card>
+
+  <app-card>
+    <h2>Dashboard 3</h2>
+    <p>Revenue Details 2</p>
+  </app-card>
+</div>
