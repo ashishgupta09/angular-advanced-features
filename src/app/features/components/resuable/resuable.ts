@@ -23,6 +23,11 @@ export class Resuable {
   isOpen = false;
   private fb = inject(FormBuilder);
   userForm!: FormGroup;
+  selectComponent = 'A';
+
+  selectedButton(value:string){
+    this.selectComponent = value
+  }
 
   ngOnInit(): void {
     this.initializeForm();
