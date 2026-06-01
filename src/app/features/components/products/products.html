@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="form-card">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <input type="text" placeholder="Product Name" formControlName="productName" />
+      <textarea placeholder="Description" formControlName="description"> </textarea>
+      <input type="number" placeholder="Price" formControlName="price" />
+      <button type="submit">
+        {{ isEditMode() ? 'Update Post' : 'Add Post' }}
+      </button>
+
+      <button type="button" (click)="resetForm()">Reset</button>
+    </form>
+  </div>
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for(product of products; track product.id) {
+          <tr>
+            <td>{{ product.productName }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+              <button (click)="editProduct(product)">Edit</button>
+              <button (click)="deleteProduct(product.id)">Delete</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

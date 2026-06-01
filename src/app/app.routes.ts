@@ -24,4 +24,9 @@ export const routes: Routes = [
     path: 'poets',
     loadComponent: () => import('../app/features/components/poets/poets').then((c) => c.Poets),
   },
+  {
+    path: 'products',
+    loadComponent: () =>
+      import('../app/features/components/products/products').then((c) => c.Products),
+  },
 ];
