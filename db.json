@@ -141,5 +141,14 @@
       "id": "8Ir_4E-7YRs"
     }
   ],
+  "posts": [
+    {
+      "title": "roy",
+      "description": "start neww",
+      "author": "new 2",
+      "createdAt": "2026-06-01",
+      "id": "F23p14XL84Q"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

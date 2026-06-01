@@ -17,6 +17,11 @@ export const routes: Routes = [
   },
   {
     path: 'reusable',
-    loadComponent: () => import('../app/features/components/resuable/resuable').then((c) => c.Resuable),
+    loadComponent: () =>
+      import('../app/features/components/resuable/resuable').then((c) => c.Resuable),
+  },
+  {
+    path: 'poets',
+    loadComponent: () => import('../app/features/components/poets/poets').then((c) => c.Poets),
   },
 ];
