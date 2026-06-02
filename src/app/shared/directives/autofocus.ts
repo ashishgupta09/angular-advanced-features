@@ -1,7 +1,8 @@
 import { AfterContentInit, Directive, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[appAutofocus]',
+  selector: '[appAutoFocus]',
+  standalone: true,
 })
 export class Autofocus implements AfterContentInit {
   constructor(private el: ElementRef) {}

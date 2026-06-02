@@ -7,6 +7,9 @@ import { Highlight } from '../../../shared/directives/highlight';
 import { Role } from '../../../shared/directives/role';
 import { Skeleton } from '../../../shared/directives/skeleton';
 import { Tooltip } from '../../../shared/directives/tooltip';
+import { Autofocus } from '../../../shared/directives/autofocus';
+import { Onlynumber } from '../../../shared/directives/onlynumber';
+import { Infinitescroll } from '../../../shared/directives/infinitescroll';
 
 @Component({
   selector: 'app-directive',
@@ -19,6 +22,9 @@ import { Tooltip } from '../../../shared/directives/tooltip';
     Skeleton,
     Tooltip,
     Role,
+    Autofocus,
+    Onlynumber,
+    Infinitescroll,
   ],
   standalone: true,
   templateUrl: './directive.html',

@@ -1,7 +1,7 @@
 import { Directive, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Directive({
-  selector: '[appInfinitescroll]',
+  selector: '[appInfiniteScroll]',
   standalone: true,
 })
 export class Infinitescroll {

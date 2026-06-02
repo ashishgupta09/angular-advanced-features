@@ -20,5 +20,5 @@ export class InputField {
   type = 'text';
 
   @Input()
-  control!: FormControl;
+  control: FormControl = new FormControl();
 }
