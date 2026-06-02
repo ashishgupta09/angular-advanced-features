@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Poet } from '../../../core/services/poet';
 import { Post } from '../../../core/interfaces/post';
 
@@ -14,6 +15,7 @@ import { Post } from '../../../core/interfaces/post';
 export class Poets implements OnInit {
   private fb = inject(FormBuilder);
   private service = inject(Poet);
+  private destroyRef = inject(DestroyRef);
   posts = signal<Post[]>([]);
   isEditMode = signal(false);
   seletedPostId = signal<string | null>(null);
@@ -29,7 +31,7 @@ export class Poets implements OnInit {
   }
 
   getPosts() {
-    this.service.getPosts().subscribe({
+    this.service.getPosts().pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
       next: (res) => {
         this.posts.set(res);
       },
@@ -51,7 +53,7 @@ export class Poets implements OnInit {
     } as Post;
 
     if (this.isEditMode()) {
-      this.service.updatePost(this.seletedPostId()!, payload).subscribe({
+      this.service.updatePost(this.seletedPostId()!, payload).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
         next: () => {
           (this.getPosts(), this.resetForm());
         },
@@ -60,7 +62,7 @@ export class Poets implements OnInit {
         },
       });
     } else {
-      this.service.addPost(payload).subscribe({
+      this.service.addPost(payload).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
         next: () => {
           (this.getPosts(), this.resetForm());
         },
@@ -72,7 +74,7 @@ export class Poets implements OnInit {
   }
 
   deletePost(id: string) {
-    this.service.deletePost(id).subscribe({
+    this.service.deletePost(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
       next: () => {
         this.getPosts();
       },

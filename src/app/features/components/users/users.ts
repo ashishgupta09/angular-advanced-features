@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Crud } from '../../../core/services/crud';
 import { User } from '../../../core/interfaces/user';
 
@@ -14,6 +15,7 @@ import { User } from '../../../core/interfaces/user';
 export class Users implements OnInit {
   private fb = inject(FormBuilder);
   private service = inject(Crud);
+  private destroyRef = inject(DestroyRef);
   users = signal<User[]>([]);
   isEditMode = signal(false);
   selectedUserId = signal<string | null>(null);
@@ -33,7 +35,7 @@ export class Users implements OnInit {
 
   // GET USERS
   getUsers() {
-    this.service.getUsers().subscribe({
+    this.service.getUsers().pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
       next: (res) => {
         this.users.set(res);
         console.log(res);
@@ -118,7 +120,7 @@ export class Users implements OnInit {
     } as User;
 
     if (this.isEditMode()) {
-      this.service.updateUser(this.selectedUserId()!, payload).subscribe({
+      this.service.updateUser(this.selectedUserId()!, payload).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
         next: () => {
           this.getUsers();
           this.resetForm();
@@ -128,7 +130,7 @@ export class Users implements OnInit {
         },
       });
     } else {
-      this.service.addUser(payload).subscribe({
+      this.service.addUser(payload).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
         next: () => {
           this.getUsers();
           this.resetForm();
@@ -158,7 +160,7 @@ export class Users implements OnInit {
   // DELETE USER
 
   deleteUser(id: string) {
-    this.service.deleteUser(id).subscribe({
+    this.service.deleteUser(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
       next: () => {
         this.getUsers();
       },
