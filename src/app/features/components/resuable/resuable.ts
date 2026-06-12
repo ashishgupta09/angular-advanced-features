@@ -14,7 +14,7 @@ import { Card } from '../../../shared/components/card/card';
 
 @Component({
   selector: 'app-resuable',
-  imports: [CommonModule, Modal, Button, InputField, ReactiveFormsModule,Card],
+  imports: [CommonModule, Modal, Button, InputField, ReactiveFormsModule, Card],
   standalone: true,
   templateUrl: './resuable.html',
   styleUrl: './resuable.scss',
@@ -25,8 +25,8 @@ export class Resuable {
   userForm!: FormGroup;
   selectComponent = 'A';
 
-  selectedButton(value:string){
-    this.selectComponent = value
+  selectedButton(value: string) {
+    this.selectComponent = value;
   }
 
   ngOnInit(): void {

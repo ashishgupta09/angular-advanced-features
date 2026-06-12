@@ -1,3 +1,7 @@
-<button [class]="variant">
+<button 
+  [type]="type" 
+  [disabled]="disabled" 
+  (click)="onClick()" 
+  [ngClass]="buttonClass">
   {{ label }}
 </button>

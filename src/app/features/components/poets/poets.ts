@@ -31,14 +31,17 @@ export class Poets implements OnInit {
   }
 
   getPosts() {
-    this.service.getPosts().pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
-      next: (res) => {
-        this.posts.set(res);
-      },
-      error(err) {
-        console.log(err);
-      },
-    });
+    this.service
+      .getPosts()
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (res) => {
+          this.posts.set(res);
+        },
+        error(err) {
+          console.log(err);
+        },
+      });
   }
 
   onSubmit() {
@@ -53,35 +56,44 @@ export class Poets implements OnInit {
     } as Post;
 
     if (this.isEditMode()) {
-      this.service.updatePost(this.seletedPostId()!, payload).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
-        next: () => {
-          (this.getPosts(), this.resetForm());
-        },
-        error(err) {
-          console.log(err);
-        },
-      });
+      this.service
+        .updatePost(this.seletedPostId()!, payload)
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe({
+          next: () => {
+            (this.getPosts(), this.resetForm());
+          },
+          error(err) {
+            console.log(err);
+          },
+        });
     } else {
-      this.service.addPost(payload).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
-        next: () => {
-          (this.getPosts(), this.resetForm());
-        },
-        error(err) {
-          console.log(err);
-        },
-      });
+      this.service
+        .addPost(payload)
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe({
+          next: () => {
+            (this.getPosts(), this.resetForm());
+          },
+          error(err) {
+            console.log(err);
+          },
+        });
     }
   }
 
   deletePost(id: string) {
-    this.service.deletePost(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
-      next: () => {
-        this.getPosts();
-      },
-      error(err) {
-        console.log(err);
-      },
-    });
+    this.service
+      .deletePost(id)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: () => {
+          this.getPosts();
+        },
+        error(err) {
+          console.log(err);
+        },
+      });
   }
 
   editPost(post: Post) {
