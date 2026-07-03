@@ -1,0 +1,16 @@
+<!-- Global error toast — sits above everything -->
+<app-error-toast></app-error-toast>
+
+<!-- Nav -->
+<nav class="app-nav">
+  <span class="app-nav-brand">Angular Interview</span>
+  <div class="app-nav-links">
+    <a routerLink="/users" routerLinkActive="active">User Directory</a>
+    <a routerLink="/multi-step-form" routerLinkActive="active">Multi-Step Form</a>
+  </div>
+</nav>
+
+<!-- Routed content -->
+<main>
+  <router-outlet></router-outlet>
+</main>

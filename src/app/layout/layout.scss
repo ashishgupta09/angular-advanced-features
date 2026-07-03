@@ -1,0 +1,76 @@
+/* =========================================
+   NAV
+   ========================================= */
+.app-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 56px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+.app-nav-brand {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.01em;
+}
+
+.app-nav-links {
+  display: flex;
+  gap: 4px;
+
+  a {
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    &.active {
+      background: #eff6ff;
+      color: #2563eb;
+      font-weight: 600;
+    }
+  }
+}
+
+/* =========================================
+   MAIN
+   ========================================= */
+main {
+  min-height: calc(100vh - 56px);
+  background-color: #f9fafb;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+@media (max-width: 480px) {
+  .app-nav {
+    padding: 0 16px;
+    flex-wrap: wrap;
+    height: auto;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    gap: 8px;
+  }
+
+  .app-nav-links a {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}
