@@ -17,12 +17,12 @@
           type="text"
           formControlName="firstName"
           placeholder="Alice"
-          [class.invalid]="firstName?.invalid && firstName?.touched"
+          [class.invalid]="firstName.invalid && firstName.touched"
         />
-        @if (firstName?.invalid && firstName?.touched) {
+        @if (firstName.invalid && firstName.touched) {
           <span class="error">
-            @if (firstName?.errors?.['required']) { First name is required. }
-            @else if (firstName?.errors?.['minlength']) { At least 2 characters. }
+            @if (firstName.errors?.['required']) { First name is required. }
+            @else if (firstName.errors?.['minlength']) { At least 2 characters. }
           </span>
         }
       </div>
@@ -35,12 +35,12 @@
           type="text"
           formControlName="lastName"
           placeholder="Johnson"
-          [class.invalid]="lastName?.invalid && lastName?.touched"
+          [class.invalid]="lastName.invalid && lastName.touched"
         />
-        @if (lastName?.invalid && lastName?.touched) {
+        @if (lastName.invalid && lastName.touched) {
           <span class="error">
-            @if (lastName?.errors?.['required']) { Last name is required. }
-            @else if (lastName?.errors?.['minlength']) { At least 2 characters. }
+            @if (lastName.errors?.['required']) { Last name is required. }
+            @else if (lastName.errors?.['minlength']) { At least 2 characters. }
           </span>
         }
       </div>
@@ -54,12 +54,12 @@
         type="email"
         formControlName="email"
         placeholder="alice@example.com"
-        [class.invalid]="email?.invalid && email?.touched"
+        [class.invalid]="email.invalid && email.touched"
       />
-      @if (email?.invalid && email?.touched) {
+      @if (email.invalid && email.touched) {
         <span class="error">
-          @if (email?.errors?.['required']) { Email is required. }
-          @else if (email?.errors?.['email']) { Enter a valid email address. }
+          @if (email.errors?.['required']) { Email is required. }
+          @else if (email.errors?.['email']) { Enter a valid email address. }
         </span>
       }
     </div>
@@ -72,12 +72,12 @@
         type="tel"
         formControlName="phone"
         placeholder="+1-555-0101"
-        [class.invalid]="phone?.invalid && phone?.touched"
+        [class.invalid]="phone.invalid && phone.touched"
       />
-      @if (phone?.invalid && phone?.touched) {
+      @if (phone.invalid && phone.touched) {
         <span class="error">
-          @if (phone?.errors?.['required']) { Phone is required. }
-          @else if (phone?.errors?.['pattern']) { Enter a valid phone number. }
+          @if (phone.errors?.['required']) { Phone is required. }
+          @else if (phone.errors?.['pattern']) { Enter a valid phone number. }
         </span>
       }
     </div>
