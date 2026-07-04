@@ -21,6 +21,14 @@ export const routes: Routes = [
     title: 'Multi-Step Form',
   },
   {
+    path: 'modal-demo',
+    loadComponent: () =>
+      import('./features/pages/modal-demo/modal-demo').then(
+        (m) => m.ModalDemoPage,
+      ),
+    title: 'Modal Demo',
+  },
+  {
     path: '**',
     redirectTo: 'users',
   },
