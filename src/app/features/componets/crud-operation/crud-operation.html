@@ -1,0 +1,98 @@
+<div class="page">
+  <div>
+    <h1>User List</h1>
+    <p>Angular Zoneless Signals CRUD Operations</p>
+  </div>
+  <div class="button-card">
+    <h2>{{ users().length }}</h2>
+    <span>Total Users</span>
+  </div>
+</div>
+
+<!-- form -->
+
+<div class="form-card">
+  <div class="card-title">
+    <h2>
+      {{ isEditMode() ? 'Update User' : 'Craete User' }}
+    </h2>
+  </div>
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" placeholder="Enter Name" formControlName="name" />
+      </div>
+      <div class="form-group">
+        <label for="email">email</label>
+        <input type="email" placeholder="Enter Email" formControlName="email" />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" placeholder="Enter Phone" formControlName="phone" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter Password" formControlName="password" />
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" placeholder="Enter City" formControlName="city" />
+      </div>
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" placeholder="Enter Country" formControlName="country" />
+      </div>
+      <div class="button-group">
+        <button type="submit" class="primary-btn">
+          {{ isEditMode() ? 'Edit User' : 'Add User' }}
+        </button>
+        <button type="submit" class="secondary-btn" (click)="resetForm()">reset</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- TABLE -->
+
+<div class="table-card">
+  <div class="card-title">
+    <h2>Users List</h2>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Password</th>
+          <th>City</th>
+          <th>Country</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (user of users(); track user.id) {
+          <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.password }}</td>
+            <td>{{ user.city }}</td>
+            <td>{{ user.country }}</td>
+            <td>
+              <div class="action-btn">
+                <button type="submit" class="primary-btn" (click)="editUser(user)">Edit</button>
+                <button type="submit" class="secondary-btn" (click)="deleteUser(user.id)">Delete</button>
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

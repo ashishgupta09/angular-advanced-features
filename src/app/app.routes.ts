@@ -8,8 +8,7 @@ export const routes: Routes = [
   },
   {
     path: 'users',
-    loadComponent: () =>
-      import('./features/componets/filter/filter').then((m) => m.Filter),
+    loadComponent: () => import('./features/componets/filter/filter').then((m) => m.Filter),
     title: 'User Directory',
   },
   {
@@ -23,9 +22,13 @@ export const routes: Routes = [
   {
     path: 'modal-demo',
     loadComponent: () =>
-      import('./features/pages/modal-demo/modal-demo').then(
-        (m) => m.ModalDemoPage,
-      ),
+      import('./features/pages/modal-demo/modal-demo').then((m) => m.ModalDemoPage),
+    title: 'Modal Demo',
+  },
+  {
+    path: 'crud',
+    loadComponent: () =>
+      import('./features/componets/crud-operation/crud-operation').then((m) => m.CrudOperation),
     title: 'Modal Demo',
   },
   {

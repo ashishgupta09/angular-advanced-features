@@ -1,144 +1,130 @@
 {
   "users": [
     {
-      "firstName": "Ashish",
-      "lastName": "Gupta",
-      "email": "ashsh@gmail.com",
-      "phone": "9565234871",
-      "age": 25,
-      "role": "admin",
-      "gender": "male",
-      "username": "demo",
-      "password": "123456",
-      "maidenName": "",
-      "birthDate": "",
-      "image": "",
-      "bloodGroup": "",
-      "height": 0,
-      "weight": 0,
-      "eyeColor": "",
-      "hair": {
-        "color": "",
-        "type": ""
-      },
-      "ip": "",
-      "address": {
-        "address": "",
-        "city": "",
-        "state": "",
-        "stateCode": "",
-        "postalCode": "",
-        "coordinates": {
-          "lat": 0,
-          "lng": 0
-        },
-        "country": ""
-      },
-      "macAddress": "",
-      "university": "",
-      "bank": {
-        "cardExpire": "",
-        "cardNumber": "",
-        "cardType": "",
-        "currency": "",
-        "iban": ""
-      },
-      "company": {
-        "department": "",
-        "name": "",
-        "title": "",
-        "address": {
-          "address": "",
-          "city": "",
-          "state": "",
-          "stateCode": "",
-          "postalCode": "",
-          "coordinates": {
-            "lat": 0,
-            "lng": 0
-          },
-          "country": ""
-        }
-      },
-      "ein": "",
-      "ssn": "",
-      "userAgent": "",
-      "crypto": {
-        "coin": "",
-        "wallet": "",
-        "network": ""
-      },
-      "id": "zMOGRzFW-0o"
+      "name": "Ashish Gupta",
+      "email": "ashishgupta95652@gmail.com",
+      "password": "2222",
+      "phone": "09565234871",
+      "city": "Pune",
+      "country": "India",
+      "id": "2"
     },
     {
-      "firstName": "Sagar",
-      "lastName": "Choudhari",
-      "email": "sagar@gmail.com",
-      "phone": "8899221122",
-      "age": 26,
-      "role": "admin",
-      "gender": "male",
-      "username": "demo",
-      "password": "123456",
-      "maidenName": "",
-      "birthDate": "",
-      "image": "",
-      "bloodGroup": "",
-      "height": 0,
-      "weight": 0,
-      "eyeColor": "",
-      "hair": {
-        "color": "",
-        "type": ""
-      },
-      "ip": "",
-      "address": {
-        "address": "",
-        "city": "",
-        "state": "",
-        "stateCode": "",
-        "postalCode": "",
-        "coordinates": {
-          "lat": 0,
-          "lng": 0
-        },
-        "country": ""
-      },
-      "macAddress": "",
-      "university": "",
-      "bank": {
-        "cardExpire": "",
-        "cardNumber": "",
-        "cardType": "",
-        "currency": "",
-        "iban": ""
-      },
-      "company": {
-        "department": "",
-        "name": "",
-        "title": "",
-        "address": {
-          "address": "",
-          "city": "",
-          "state": "",
-          "stateCode": "",
-          "postalCode": "",
-          "coordinates": {
-            "lat": 0,
-            "lng": 0
-          },
-          "country": ""
-        }
-      },
-      "ein": "",
-      "ssn": "",
-      "userAgent": "",
-      "crypto": {
-        "coin": "",
-        "wallet": "",
-        "network": ""
-      },
-      "id": "8Ir_4E-7YRs"
+      "id": "4",
+      "name": "Diana Prince",
+      "email": "diana.p@example.com",
+      "password": "W0nderW0man",
+      "phone": "+49-555-0104",
+      "city": "Berlin",
+      "country": "Germany"
+    },
+    {
+      "id": "5",
+      "name": "Evan Wright",
+      "email": "evan.w@example.com",
+      "password": "Ev@n2024!",
+      "phone": "+81-555-0105",
+      "city": "Tokyo",
+      "country": "Japan"
+    },
+    {
+      "id": "6",
+      "name": "Fiona Gallagher",
+      "email": "fiona.g@example.com",
+      "password": "F10n@Pass",
+      "phone": "+61-555-0106",
+      "city": "Sydney",
+      "country": "Australia"
+    },
+    {
+      "id": "7",
+      "name": "George Miller",
+      "email": "george.m@example.com",
+      "password": "G30rg3#Pass",
+      "phone": "+1-555-0107",
+      "city": "Toronto",
+      "country": "Canada"
+    },
+    {
+      "id": "8",
+      "name": "Hannah Abbott",
+      "email": "hannah.a@example.com",
+      "password": "H@nn@h99",
+      "phone": "+34-555-0108",
+      "city": "Madrid",
+      "country": "Spain"
+    },
+    {
+      "id": "9",
+      "name": "Ian Curtis",
+      "email": "ian.c@example.com",
+      "password": "I@nCurt1s",
+      "phone": "+39-555-0109",
+      "city": "Rome",
+      "country": "Italy"
+    },
+    {
+      "id": "10",
+      "name": "Julia Roberts",
+      "email": "julia.r@example.com",
+      "password": "Jul1@R0b3rts",
+      "phone": "+55-555-0110",
+      "city": "Sao Paulo",
+      "country": "Brazil"
+    },
+    {
+      "id": "11",
+      "name": "Kevin Hart",
+      "email": "kevin.h@example.com",
+      "password": "K3v1nH@rt",
+      "phone": "+82-555-0111",
+      "city": "Seoul",
+      "country": "South Korea"
+    },
+    {
+      "id": "12",
+      "name": "Laura Palmer",
+      "email": "laura.p@example.com",
+      "password": "L@ur@P@lm",
+      "phone": "+7-555-0112",
+      "city": "Moscow",
+      "country": "Russia"
+    },
+    {
+      "id": "14",
+      "name": "Nina Simone",
+      "email": "nina.s@example.com",
+      "password": "N1n@S1m0ne",
+      "phone": "+27-555-0114",
+      "city": "Cape Town",
+      "country": "South Africa"
+    },
+    {
+      "id": "15",
+      "name": "Oscar Isaac",
+      "email": "oscar.i@example.com",
+      "password": "0sc@r1s@@c",
+      "phone": "+52-555-0115",
+      "city": "Mexico City",
+      "country": "Mexico"
+    },
+    {
+      "id": "16",
+      "name": "Paula Abdul",
+      "email": "paula.a@example.com",
+      "password": "P@ul@Abdul",
+      "phone": "+91-555-0116",
+      "city": "Mumbai",
+      "country": "India"
+    },
+    {
+      "name": "Ashish Gupta",
+      "email": "ashishgupta95652@gmail.com",
+      "password": "33333",
+      "phone": "09565234871",
+      "city": "Pune",
+      "country": "India",
+      "id": "JnGEpc8RAPg"
     }
   ],
   "posts": [
